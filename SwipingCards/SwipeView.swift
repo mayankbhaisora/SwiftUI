@@ -1,8 +1,8 @@
 //
 //  SwipeView.swift
-//  ConstantineSwiftUI
+//  SwipeView
 //
-//  Created by Biz2credit on 25/08/21.
+//  Created by MayankBhaisora on 25/08/21.
 //
 
 import SwiftUI
@@ -12,6 +12,8 @@ struct SwipeView<T: View>: View {
     @State private var offset: CGFloat = 0
     @State private var index = 0
     
+    // Here we pass all the child views that need to be displayed horizontally and we can swipe them.
+    // T is the generic class type so that we can pass any type of View in there
     let children: [T]
     let spacing: CGFloat = 10
 
@@ -49,6 +51,7 @@ struct SwipeView<T: View>: View {
 
 struct SwipeView_Previews: PreviewProvider {
     static var previews: some View {
+        // Card view is just an example view for previews, you can use any subclas of View.
         SwipeView<CardView>(children: [
             CardView(color: .cyan),
             CardView(color: .magenta),
